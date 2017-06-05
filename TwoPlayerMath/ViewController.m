@@ -148,7 +148,25 @@
         [self.input removeAllObjects];
         [self.gameModel nextUp];
         [self gamePlay];
+        
+        [self answerLabelShift:isCorrect];
     }
+}
+
+- (void)answerLabelShift:(BOOL)wasRight;
+{
+    self.correctness.alpha = 1.0;
+    if (wasRight) {
+        self.correctness.text = @"You got it!";
+        self.correctness.backgroundColor = [UIColor greenColor];
+        [self.correctness sizeToFit];
+    } else {
+        self.correctness.text = @"Wrong!!";
+        self.correctness.backgroundColor = [UIColor redColor];
+        [self.correctness sizeToFit];
+        
+    }
+    [UIView animateWithDuration:1.0 animations:^{self.correctness.alpha = 0.0;} completion:^(BOOL finished){;}];
 }
 
 @end

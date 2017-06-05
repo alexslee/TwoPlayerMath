@@ -112,10 +112,18 @@
                                     <action selector="buttonZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LSB-5A-rgw"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tjV-HP-8gh">
+                                <rect key="frame" x="166" y="168" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
+                        <outlet property="correctness" destination="tjV-HP-8gh" id="uwe-tD-Xh8"/>
                         <outlet property="currentQuestion" destination="nvP-no-oNM" id="7AM-V8-I7Z"/>
                     </connections>
                 </viewController>

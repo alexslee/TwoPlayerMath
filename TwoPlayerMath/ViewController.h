@@ -19,6 +19,7 @@
 
 @property (strong,nonatomic)NSMutableArray<UILabel *> *scoreLabels;
 
+@property (weak, nonatomic) IBOutlet UILabel *correctness;
 
 @property (nonatomic,strong)GameModel *gameModel;
 

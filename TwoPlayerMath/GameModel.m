@@ -12,7 +12,7 @@
 
 @property (nonatomic)NSInteger currentPlayerIndex;
 @property (nonatomic)NSInteger answer;
-@property (nonatomic)Player *lost;
+@property (nonatomic,strong)Player *lost;
 @property (nonatomic)BOOL isGameOver;
 
 @end
