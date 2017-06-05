@@ -12,6 +12,7 @@
 #define BASELABELY 42
 #define LABELHEIGHT 21
 #define INITLABELWIDTH 42
+#define TRAILINGSCOREMARGIN -50
 
 @interface ViewController : UIViewController
 

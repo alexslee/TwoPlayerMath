@@ -30,12 +30,18 @@
     //dynamically create the required # of player score labels
     for (unsigned i = 0; i < NUMBEROFPLAYERS; i++) {
         //create a CGrect to form initial bounds on the label
-        CGRect initial = CGRectMake(BASELABELX, BASELABELY + i*LABELHEIGHT, 0, LABELHEIGHT);
+        CGRect initial = CGRectMake(BASELABELX, 0, 0, LABELHEIGHT);
         UILabel *label = [[UILabel alloc] initWithFrame:initial];
         label.translatesAutoresizingMaskIntoConstraints = NO;
         [self.view addSubview:label];
-
-        [label.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:100];
+        //Set the label's constraints
+        NSLayoutConstraint *trailing = [label.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor
+                                                                             constant:TRAILINGSCOREMARGIN];
+        NSLayoutConstraint *top = [label.topAnchor constraintEqualToAnchor:self.view.topAnchor
+                                                                   constant:BASELABELY + i * LABELHEIGHT];
+        
+        [label.superview addConstraint:trailing];
+        [label.superview addConstraint:top];
         
         label.textAlignment = NSTextAlignmentRight;
         [label setFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
@@ -46,7 +52,6 @@
     
     [self gamePlay];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -66,7 +71,16 @@
     }
     //if game over, just display the game over text
     if ([self.gameModel gameOver]) {
-        self.currentQuestion.text = [NSString stringWithFormat:@"Game Over! %@ lost!",[self.gameModel whoLost]];
+        
+        NSString *lostText = [NSString stringWithFormat:@"Game Over! %@ lost!",[self.gameModel whoLost]];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:lostText message:@"Play again?" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Yes!" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            [self.gameModel restart];
+            self.play = YES;
+            [self gamePlay];
+        }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
         [self.currentQuestion sizeToFit];
         self.play = NO;
         return;

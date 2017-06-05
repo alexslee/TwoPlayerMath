@@ -41,6 +41,17 @@
     return self;
 }
 
+- (void)restart;
+{
+    for (Player *player in self.players) {
+        player.life = 3;
+    }
+    self.currentPlayerIndex = 0;
+    self.currentPlayer = [self.players objectAtIndex:self.currentPlayerIndex];
+    _lost = nil;
+    _isGameOver = NO;
+}
+
 - (void)randomQuestion;
 {
     NSInteger left = arc4random_uniform(20) + 1;

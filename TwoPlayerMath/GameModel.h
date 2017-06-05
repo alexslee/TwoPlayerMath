@@ -18,6 +18,8 @@
 
 @property (nonatomic,strong)Player *currentPlayer;
 
+- (void)restart;
+
 - (void)randomQuestion;
 
 - (NSString *)playerScore:(NSInteger)index;
