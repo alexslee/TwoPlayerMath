@@ -12,6 +12,8 @@
 
 @property (nonatomic)NSInteger currentPlayerIndex;
 @property (nonatomic)NSInteger answer;
+@property (nonatomic)Player *lost;
+@property (nonatomic)BOOL isGameOver;
 
 @end
 
@@ -31,6 +33,10 @@
         _currentPlayer = [[Player alloc] init];
         
         _currentPlayerIndex = 0;
+        
+        _lost = [[Player alloc] init];
+        
+        _isGameOver = NO;
     }
     return self;
 }
@@ -68,12 +74,30 @@
 - (void)subtractLife;
 {
     [[self getCurrentPlayer] loseLife];
+    if ([self getCurrentPlayer].life == 0) {
+        self.lost = [self getCurrentPlayer];
+        self.isGameOver = YES;
+    }
     return;
 }
 
 - (void)nextUp;
 {
     self.currentPlayerIndex++;
+}
+
+- (BOOL)gameOver;
+{
+    return self.isGameOver;
+}
+
+- (NSString *)whoLost;
+{
+    if (self.isGameOver) {
+        return self.lost.name;
+    } else {
+        return nil;
+    }
 }
 
 @end

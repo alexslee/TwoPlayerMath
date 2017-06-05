@@ -12,6 +12,7 @@
 
 @property (nonatomic)NSInteger playerAnswer;
 @property (nonatomic,strong)NSMutableArray *input;
+@property (nonatomic)BOOL play;
 
 @end
 
@@ -22,6 +23,8 @@
     _gameModel = [[GameModel alloc] init];
     
     _input = [[NSMutableArray alloc] init];
+    
+    _play = YES;
     
     _scoreLabels = [[NSMutableArray alloc] init];
     //dynamically create the required # of player score labels
@@ -52,18 +55,29 @@
 
 - (void)gamePlay;
 {
-    //self.playerOneScore.text = [self.gameModel playerScore:0];
-    //self.playerTwoScore.text = [self.gameModel playerScore:1];
+    if (!self.play) {
+        return;
+    }
+    //update the score labels
     for (unsigned i = 0; i < NUMBEROFPLAYERS; i++) {
         NSString *scoreString = [self.gameModel playerScore:i];
         [self.scoreLabels objectAtIndex:i].text = scoreString;
         [[self.scoreLabels objectAtIndex:i] sizeToFit];
     }
-    
+    //if game over, just display the game over text
+    if ([self.gameModel gameOver]) {
+        self.currentQuestion.text = [NSString stringWithFormat:@"Game Over! %@ lost!",[self.gameModel whoLost]];
+        [self.currentQuestion sizeToFit];
+        self.play = NO;
+        return;
+    }
+    //generate the next question and display it
     [self.gameModel randomQuestion];
+    
     self.currentQuestion.text = self.gameModel.question;
-    //self.currentQuestion.textAlignment = NSTextAlignmentCenter;
     [self.currentQuestion sizeToFit];
+    
+    return;
 }
 
 - (void)answerFromInput;
@@ -72,6 +86,8 @@
     self.playerAnswer = [answer integerValue];
     NSLog(@"answered with: %ld",self.playerAnswer);
 }
+
+//the following methods for the # buttons just construct the array of string literals from which we will extract the answer
 
 - (IBAction)buttonOne:(id)sender {
     [self.input addObject:@"1"];
@@ -113,20 +129,26 @@
     [self.input addObject:@"0"];
 }
 
+//answer checking when the submit answer button is pressed
+
 - (IBAction)submitAnswer:(id)sender {
-    [self answerFromInput];
-    
-    BOOL isCorrect = [self.gameModel checkAnswer:self.playerAnswer];
-    
-    if (isCorrect) {
-        NSLog(@"Correct!");
-    } else {
-        [self.gameModel subtractLife];
-        NSLog(@"Wrong!");
+    if (self.play) {
+        [self answerFromInput];
+        
+        BOOL isCorrect = [self.gameModel checkAnswer:self.playerAnswer];
+        
+        if (isCorrect) {
+            NSLog(@"Correct!");
+        } else {
+            [self.gameModel subtractLife];
+            NSLog(@"Wrong!");
+        }
+        
+        //reset input array, swap to the next player, and run the gamePlay function again
+        [self.input removeAllObjects];
+        [self.gameModel nextUp];
+        [self gamePlay];
     }
-    [self.input removeAllObjects];
-    [self.gameModel nextUp];
-    [self gamePlay];
 }
 
 @end

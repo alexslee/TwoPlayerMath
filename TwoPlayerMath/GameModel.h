@@ -12,7 +12,7 @@
 
 @interface GameModel : NSObject
 
-@property (nonatomic,strong)NSMutableArray *players;
+@property (nonatomic,strong)NSMutableArray<Player *> *players;
 
 @property (nonatomic,strong)NSString *question;
 
@@ -27,5 +27,9 @@
 - (void)subtractLife;
 
 - (void)nextUp;
+
+- (BOOL)gameOver;
+
+- (NSString *)whoLost;
 
 @end
