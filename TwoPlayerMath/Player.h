@@ -10,12 +10,19 @@
 #define LIVES 3
 @interface Player : NSObject
 
+//lives remaining
 @property (nonatomic)NSInteger life;
+
+//player name
 @property (nonatomic,strong)NSString *name;
 
+//initialize the player instance with a name
 - (id)initWithName:(NSString *)name;
+
+//decrement life count
 - (void)loseLife;
 
+//return string describing the player's remaining lives
 - (NSString *)getScore;
 
 @end

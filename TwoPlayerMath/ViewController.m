@@ -27,6 +27,7 @@
     _play = YES;
     
     _scoreLabels = [[NSMutableArray alloc] init];
+    
     //dynamically create the required # of player score labels
     for (unsigned i = 0; i < NUMBEROFPLAYERS; i++) {
         //create a CGrect to form initial bounds on the label
@@ -43,6 +44,7 @@
         [label.superview addConstraint:trailing];
         [label.superview addConstraint:top];
         
+        //format the label
         label.textAlignment = NSTextAlignmentRight;
         [label setFont:[UIFont fontWithName:@"Helvetica Neue" size:14]];
         label.text = @"test string lol";
@@ -79,8 +81,10 @@
             self.play = YES;
             [self gamePlay];
         }];
+        
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
+        
         [self.currentQuestion sizeToFit];
         self.play = NO;
         return;
@@ -167,6 +171,7 @@
     }
 }
 
+//toggle the right/wrong animation
 - (void)answerLabelShift:(BOOL)wasRight;
 {
     self.correctness.alpha = 1.0;
@@ -180,6 +185,7 @@
         [self.correctness sizeToFit];
         
     }
+    
     [UIView animateWithDuration:1.0 animations:^{self.correctness.alpha = 0.0;} completion:^(BOOL finished){;}];
 }
 

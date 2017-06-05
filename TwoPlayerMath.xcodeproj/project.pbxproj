@@ -15,6 +15,12 @@
 		43E4E1631EE5D62400D4FA40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43E4E1611EE5D62400D4FA40 /* LaunchScreen.storyboard */; };
 		43E4E16C1EE5DA3900D4FA40 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E4E16B1EE5DA3900D4FA40 /* Player.m */; };
 		43E4E16F1EE5DC1600D4FA40 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43E4E16E1EE5DC1600D4FA40 /* GameModel.m */; };
+		43EEFA1B1EE610BE007F2576 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFA111EE610BE007F2576 /* Question.m */; };
+		43EEFA1C1EE610BE007F2576 /* QuestionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFA131EE610BE007F2576 /* QuestionFactory.m */; };
+		43EEFA1D1EE610BE007F2576 /* MultiplicationQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFA151EE610BE007F2576 /* MultiplicationQuestion.m */; };
+		43EEFA1E1EE610BE007F2576 /* DivisionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFA161EE610BE007F2576 /* DivisionQuestion.m */; };
+		43EEFA1F1EE610BE007F2576 /* AdditionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFA171EE610BE007F2576 /* AdditionQuestion.m */; };
+		43EEFA221EE614B8007F2576 /* SubtractionQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 43EEFA201EE614B8007F2576 /* SubtractionQuestion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +38,18 @@
 		43E4E16B1EE5DA3900D4FA40 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		43E4E16D1EE5DC1600D4FA40 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
 		43E4E16E1EE5DC1600D4FA40 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		43EEFA111EE610BE007F2576 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		43EEFA121EE610BE007F2576 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		43EEFA131EE610BE007F2576 /* QuestionFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionFactory.m; sourceTree = "<group>"; };
+		43EEFA141EE610BE007F2576 /* QuestionFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionFactory.h; sourceTree = "<group>"; };
+		43EEFA151EE610BE007F2576 /* MultiplicationQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiplicationQuestion.m; sourceTree = "<group>"; };
+		43EEFA161EE610BE007F2576 /* DivisionQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DivisionQuestion.m; sourceTree = "<group>"; };
+		43EEFA171EE610BE007F2576 /* AdditionQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdditionQuestion.m; sourceTree = "<group>"; };
+		43EEFA181EE610BE007F2576 /* DivisionQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DivisionQuestion.h; sourceTree = "<group>"; };
+		43EEFA191EE610BE007F2576 /* MultiplicationQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiplicationQuestion.h; sourceTree = "<group>"; };
+		43EEFA1A1EE610BE007F2576 /* AdditionQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdditionQuestion.h; sourceTree = "<group>"; };
+		43EEFA201EE614B8007F2576 /* SubtractionQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubtractionQuestion.m; sourceTree = "<group>"; };
+		43EEFA211EE614B8007F2576 /* SubtractionQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubtractionQuestion.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +95,18 @@
 				43E4E16B1EE5DA3900D4FA40 /* Player.m */,
 				43E4E16D1EE5DC1600D4FA40 /* GameModel.h */,
 				43E4E16E1EE5DC1600D4FA40 /* GameModel.m */,
+				43EEFA111EE610BE007F2576 /* Question.m */,
+				43EEFA121EE610BE007F2576 /* Question.h */,
+				43EEFA131EE610BE007F2576 /* QuestionFactory.m */,
+				43EEFA141EE610BE007F2576 /* QuestionFactory.h */,
+				43EEFA1A1EE610BE007F2576 /* AdditionQuestion.h */,
+				43EEFA171EE610BE007F2576 /* AdditionQuestion.m */,
+				43EEFA181EE610BE007F2576 /* DivisionQuestion.h */,
+				43EEFA161EE610BE007F2576 /* DivisionQuestion.m */,
+				43EEFA191EE610BE007F2576 /* MultiplicationQuestion.h */,
+				43EEFA151EE610BE007F2576 /* MultiplicationQuestion.m */,
+				43EEFA211EE614B8007F2576 /* SubtractionQuestion.h */,
+				43EEFA201EE614B8007F2576 /* SubtractionQuestion.m */,
 			);
 			path = TwoPlayerMath;
 			sourceTree = "<group>";
@@ -161,9 +191,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E4E16C1EE5DA3900D4FA40 /* Player.m in Sources */,
+				43EEFA221EE614B8007F2576 /* SubtractionQuestion.m in Sources */,
+				43EEFA1D1EE610BE007F2576 /* MultiplicationQuestion.m in Sources */,
 				43E4E15B1EE5D62400D4FA40 /* ViewController.m in Sources */,
+				43EEFA1F1EE610BE007F2576 /* AdditionQuestion.m in Sources */,
 				43E4E16F1EE5DC1600D4FA40 /* GameModel.m in Sources */,
+				43EEFA1B1EE610BE007F2576 /* Question.m in Sources */,
 				43E4E1581EE5D62400D4FA40 /* AppDelegate.m in Sources */,
+				43EEFA1E1EE610BE007F2576 /* DivisionQuestion.m in Sources */,
+				43EEFA1C1EE610BE007F2576 /* QuestionFactory.m in Sources */,
 				43E4E1551EE5D62400D4FA40 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +357,7 @@
 				43E4E1691EE5D62400D4FA40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

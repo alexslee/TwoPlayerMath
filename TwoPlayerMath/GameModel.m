@@ -28,7 +28,7 @@
             [_players addObject:[[Player alloc] initWithName:name]];
         }
         
-        _question = [[NSString alloc] init];
+        _question = [[NSMutableString alloc] init];
         
         _currentPlayer = [[Player alloc] init];
         
@@ -37,6 +37,8 @@
         _lost = [[Player alloc] init];
         
         _isGameOver = NO;
+        
+        _questionFactory = [[QuestionFactory alloc] init];
     }
     return self;
 }
@@ -54,14 +56,14 @@
 
 - (void)randomQuestion;
 {
-    NSInteger left = arc4random_uniform(20) + 1;
-    NSInteger right = arc4random_uniform(20) + 1;
     NSString *playerName = [self getCurrentPlayer].name;
     
-    self.question = [NSString stringWithFormat:@"%@: %ld + %ld?",playerName,left,right];
-    self.answer = left + right;
-    
-    //NSLog(@"%@ || Answer is: %ld",self.question,self.answer);
+    //use the question factory to randomly create a question, then add it to the question string for display to the player
+    Question *generated = [self.questionFactory generateRandomQuestion];
+
+    self.question = [NSMutableString stringWithFormat:@"%@: ",playerName];
+    [self.question appendString:generated.question];
+    self.answer = generated.answer;
     
     return;
 }
