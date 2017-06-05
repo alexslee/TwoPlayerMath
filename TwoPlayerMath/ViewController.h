@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "GameModel.h"
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *currentQuestion;
+
+@property (nonatomic,strong)GameModel *gameModel;
+
 
 @end
 

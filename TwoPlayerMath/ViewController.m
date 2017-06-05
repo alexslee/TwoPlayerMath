@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _gameModel = [[GameModel alloc] init];
+    //[_gameModel randomQuestion]; <-- was testing question generation
     // Do any additional setup after loading the view, typically from a nib.
 }
 
