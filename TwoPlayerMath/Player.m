@@ -35,4 +35,9 @@
     }
 }
 
+- (NSString *)getScore;
+{
+    return [NSString stringWithFormat:@"%@ lives left: %ld",self.name,self.life];
+}
+
 @end

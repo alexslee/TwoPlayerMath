@@ -16,4 +16,6 @@
 - (id)initWithName:(NSString *)name;
 - (void)loseLife;
 
+- (NSString *)getScore;
+
 @end

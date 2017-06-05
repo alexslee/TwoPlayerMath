@@ -20,4 +20,12 @@
 
 - (void)randomQuestion;
 
+- (NSString *)playerScore:(NSInteger)index;
+
+- (BOOL)checkAnswer:(NSInteger)playerAnswer;
+
+- (void)subtractLife;
+
+- (void)nextUp;
+
 @end

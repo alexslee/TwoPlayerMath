@@ -26,6 +26,10 @@
             [_players addObject:[[Player alloc] initWithName:name]];
         }
         
+        _question = [[NSString alloc] init];
+        
+        _currentPlayer = [[Player alloc] init];
+        
         _currentPlayerIndex = 0;
     }
     return self;
@@ -48,6 +52,28 @@
 - (Player *)getCurrentPlayer;
 {
     return [ self.players objectAtIndex:(self.currentPlayerIndex % [self.players count]) ];
+}
+
+- (NSString *)playerScore:(NSInteger)index;
+{
+    Player *player = [self.players objectAtIndex:index];
+    return [player getScore];
+}
+
+- (BOOL)checkAnswer:(NSInteger)playerAnswer;
+{
+    return (playerAnswer == self.answer);
+}
+
+- (void)subtractLife;
+{
+    [[self getCurrentPlayer] loseLife];
+    return;
+}
+
+- (void)nextUp;
+{
+    self.currentPlayerIndex++;
 }
 
 @end
